@@ -3,7 +3,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config()
 const app = express();
-const port = process.env.port || 5000
+const PORT = process.env.PORT || 3000
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }));
@@ -56,6 +56,6 @@ app.get('/getData', function (req, res) {
     .then(users => res.send(users))
     .catch(err => res.status(400).json('Error: ' + err));
 });
-app.listen(3000, function () {
+app.listen(PORT, function () {
   console.log('Example app listening on port 3000!');
 });
